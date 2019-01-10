@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title></title>
+  </head>
+  <body>
+  <div class="container">
+    <h1 class="center-align">
+      My Contacts
+    </h1>
+    <input type="text" id="filterInput" placeholder="search" name="" value="">
+    <ul id="names" class="collection with-header">
+      <li class="collection-header">
+        <h5>A</h5>
+      </li>
+      <li class="collection-item">
+        <a href="#">Abe</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Asjnxcj</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Aodskx</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Amedn </a>
+      </li>
+      <li class="collection-header">
+        <h5>B</h5>
+      </li>
+      <li class="collection-item">
+        <a href="#">Bbe</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Bsjnxcj</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Bmodskx</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Bkmedn </a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Bn </a>
+      </li>
+      <li class="collection-header">
+        <h5>C</h5>
+      </li>
+      <li class="collection-item">
+        <a href="#">Cbe</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Csjnxcj</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Cmodskx</a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Ckmedn </a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Cn </a>
+      </li>
+      <li class="collection-item">
+        <a href="#">Cpppn </a>
+      </li>
+    </ul>
+  </div>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+    <script>
+      // Get input element
+      var filterInput = document.getElementById('filterInput');
+      // Add event listener
+      filterInput.addEventListener("keyup",filterNames);
+      function filterNames() {
+        // Get value of input
+      let filterValue = document.getElementById('filterInput').value.toUpperCase();
+      // Get names ul
+      let ul = document.getElementById('names');
+      // Get lis from ul
+      let li = ul.querySelectorAll('li.collection-item');
+
+      // Loop through collection-item lis
+      for (var i = 0; i < li.length; i++) {
+          let a = li[i].getElementsByTagName('a')[0];
+          // If matched
+          if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1)//true
+          {
+            li[i].style.display = "";
+
+          }
+          else {
+            li[i].style.display = "none";
+
+          }
+      }
+    }
+
+    </script>
+  </body>
+</html>
